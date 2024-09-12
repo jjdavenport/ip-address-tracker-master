@@ -2,6 +2,7 @@ import Footer from "./components/footer";
 import Input from "./components/input";
 import Header from "./components/header.jsx";
 import Card from "./components/card.jsx";
+import Map from "./components/map.jsx";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <Input />
       <Card />
+      <Map />
       <Footer />
     </>
   );
