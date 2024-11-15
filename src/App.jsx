@@ -1,5 +1,3 @@
-import Footer from "./components/footer";
-import Input from "./components/input";
 import Header from "./components/header.jsx";
 import Card from "./components/card.jsx";
 import Map from "./components/map.jsx";
@@ -7,11 +5,13 @@ import Map from "./components/map.jsx";
 function App() {
   return (
     <>
-      <Header />
-      <Input />
-      <Card />
-      <Map />
-      <Footer />
+      <div className="relative flex h-full min-h-screen w-screen flex-col">
+        <div className="relative flex flex-col items-center font-custom text-lg">
+          <Header />
+          <Card />
+          <Map />
+        </div>
+      </div>
     </>
   );
 }
