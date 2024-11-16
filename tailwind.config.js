@@ -1,7 +1,13 @@
+import fluid, { extract, screens } from "fluid-tailwind";
+
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{html,js,jsx}", "./index.html"],
+  content: {
+    files: ["./src/**/*.{html,js,jsx}", "./index.html"],
+    extract,
+  },
   theme: {
+    screens,
     extend: {
       fontFamily: {
         custom: ["rubik", "sans-serif"],
@@ -14,7 +20,10 @@ export default {
         veryDarkGray: "hsl(0, 0%, 17%)",
         darkGray: "hsl(0, 0%, 59%)",
       },
+      fontSize: {
+        customSize: "1.125rem",
+      },
     },
   },
-  plugins: [],
+  plugins: [fluid],
 };

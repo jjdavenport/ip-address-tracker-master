@@ -5,11 +5,13 @@ import Map from "./components/map.jsx";
 function App() {
   return (
     <>
-      <div className="relative flex h-full min-h-screen w-screen flex-col">
-        <div className="relative flex flex-col items-center font-custom text-lg">
+      <div className="flex h-full min-h-screen w-screen flex-col overflow-hidden">
+        <div className="relative flex flex-col items-center font-custom text-customSize text-lg">
           <Header />
-          <Card />
-          <Map />
+          <main className="flex flex-col items-center">
+            <Card />
+            <Map />
+          </main>
         </div>
       </div>
     </>
