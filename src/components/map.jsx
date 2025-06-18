@@ -9,9 +9,12 @@ const Map = ({ lat, lng }) => {
     iconAnchor: [19, 38],
     popupAnchor: [0, -38],
   });
+
+  const loading = lat !== 0 && lng !== 0;
+
   return (
-    <>
-      <div className="flex h-96 w-screen flex-1">
+    <div className="flex h-96 w-screen flex-1">
+      {loading && (
         <MapContainer
           center={[lat, lng]}
           zoom={13}
@@ -27,8 +30,8 @@ const Map = ({ lat, lng }) => {
             <Popup />
           </Marker>
         </MapContainer>
-      </div>
-    </>
+      )}
+    </div>
   );
 };
 

@@ -15,21 +15,18 @@ function App() {
   });
 
   const fetchIp = async () => {
-    const apiKey = import.meta.env.VITE_API_KEY;
     try {
-      const response = await fetch(
-        `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}`,
-      );
+      const response = await fetch(`https://ipapi.co/json/`);
       const result = await response.json();
       setData((prev) => ({
         ...prev,
-        lat: result.location.lat,
-        lng: result.location.lng,
+        lat: result.latitude,
+        lng: result.longitude,
         ip: result.ip,
-        country: result.location.country,
-        city: result.location.city,
-        isp: result.isp,
-        timeZone: result.location.timezone,
+        country: result.country_code,
+        city: result.city,
+        isp: result.org,
+        timeZone: result.timezone,
       }));
       console.log(result);
     } catch (error) {
