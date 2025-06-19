@@ -1,32 +1,45 @@
+import { useEffect } from "react";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import locationIcon from "./assets/icon-location.svg";
 
-const Map = ({ lat, lng }) => {
-  const customMarkerIcon = L.icon({
-    iconUrl: locationIcon,
-    iconSize: [46, 56],
-    iconAnchor: [19, 38],
-    popupAnchor: [0, -38],
-  });
+const customMarkerIcon = L.icon({
+  iconUrl: locationIcon,
+  iconSize: [46, 56],
+  iconAnchor: [19, 38],
+  popupAnchor: [0, -38],
+});
 
+const ChangeView = ({ center, zoom }) => {
+  const map = useMap();
+  useEffect(() => {
+    map.setView(center, zoom);
+  }, [center, zoom, map]);
+  return null;
+};
+
+const Map = ({ lat, lng }) => {
   const loading = lat !== 0 && lng !== 0;
+  const center = [lat, lng];
+  const zoom = 13;
 
   return (
     <div className="flex h-96 w-screen flex-1">
       {loading && (
         <MapContainer
-          center={[lat, lng]}
-          zoom={13}
+          center={center}
+          zoom={zoom}
           style={{ height: "70vh", width: "100%", zIndex: 0 }}
           zoomControl={false}
         >
+          <ChangeView center={center} zoom={zoom} />
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             zIndex={0}
           />
-          <Marker position={[lat, lng]} icon={customMarkerIcon}>
+          <Marker position={center} icon={customMarkerIcon}>
             <Popup />
           </Marker>
         </MapContainer>

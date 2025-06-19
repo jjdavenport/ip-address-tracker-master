@@ -13,10 +13,14 @@ function App() {
     lat: 0,
     lng: 0,
   });
+  const [input, setInput] = useState(null);
 
-  const fetchIp = async () => {
+  const fetchIp = async (ipAddress = null) => {
     try {
-      const response = await fetch(`https://ipapi.co/json/`);
+      const url = ipAddress
+        ? `https://ipapi.co/${ipAddress}/json/`
+        : `https://ipapi.co/json/`;
+      const response = await fetch(url);
       const result = await response.json();
       setData((prev) => ({
         ...prev,
@@ -29,8 +33,8 @@ function App() {
         timeZone: result.timezone,
       }));
       console.log(result);
-    } catch (error) {
-      console.log("error", error);
+    } catch {
+      console.log("error");
     }
   };
 
@@ -42,7 +46,11 @@ function App() {
     <>
       <div className="flex h-full min-h-screen w-screen flex-col overflow-hidden">
         <div className="relative flex flex-col items-center font-custom text-customSize text-lg">
-          <Header setData={setData} />
+          <Header
+            onSubmit={fetchIp}
+            input={input}
+            setInput={(e) => setInput(e.target.value)}
+          />
           <main className="flex flex-col items-center">
             <Card
               ip={data.ip}
