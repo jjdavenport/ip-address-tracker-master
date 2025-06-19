@@ -1,6 +1,6 @@
 import arrow from "./assets/icon-arrow.svg";
 
-const Input = ({ value, onChange, onSubmit }) => {
+const Input = ({ value, onChange, onSubmit, onBlur, error }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(value);
@@ -15,8 +15,9 @@ const Input = ({ value, onChange, onSubmit }) => {
         <input
           value={value}
           onChange={onChange}
+          onBlur={onBlur}
           type="text"
-          className="~sm/md:~py-3/4 ~sm/md:~pl-4/6 ~sm/md:placeholder:~text-sm/customSize flex w-full cursor-pointer rounded-l-2xl focus:outline-none"
+          className={`${error ? "outline outline-red-600 focus:outline" : "outline-none focus:outline-none"} ~sm/md:~py-3/4 ~sm/md:~pl-4/6 ~sm/md:placeholder:~text-sm/customSize flex w-full cursor-pointer rounded-l-2xl`}
           placeholder="Search for any IP address or domain"
         />
         <button className="~sm/md:~px-5/6 rounded-r-2xl bg-black transition-colors duration-300 ease-in-out hover:bg-opacity-0">
