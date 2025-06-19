@@ -19,7 +19,7 @@ const ChangeView = ({ center, zoom }) => {
   return null;
 };
 
-const Map = ({ lat, lng }) => {
+export const Map = ({ lat, lng }) => {
   const loading = lat !== 0 && lng !== 0;
   const center = [lat, lng];
   const zoom = 13;
@@ -47,5 +47,3 @@ const Map = ({ lat, lng }) => {
     </div>
   );
 };
-
-export default Map;

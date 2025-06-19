@@ -1,4 +1,4 @@
-const Card = ({ ip, isp, city, country, timeZone }) => {
+export const Card = ({ ip, isp, city, country, timeZone }) => {
   return (
     <>
       <div className="~sm/md:~px-4/0 absolute z-10 -mt-14 flex w-full flex-col overflow-hidden bg-transparent md:w-11/12 md:max-w-screen-lg">
@@ -40,5 +40,3 @@ const Card = ({ ip, isp, city, country, timeZone }) => {
     </>
   );
 };
-
-export default Card;

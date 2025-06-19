@@ -1,6 +1,6 @@
-import Input from "./input";
+import { Input } from "./index";
 
-const Header = ({ input, setInput, onSubmit, onBlur, error }) => {
+export const Header = ({ input, setInput, onSubmit, onBlur, error }) => {
   return (
     <>
       <header className="~sm/md:~gap-4/6 flex h-[30vh] w-full flex-col items-center bg-mobile bg-cover bg-no-repeat px-4 py-6 pb-16 md:bg-desktop">
@@ -18,5 +18,3 @@ const Header = ({ input, setInput, onSubmit, onBlur, error }) => {
     </>
   );
 };
-
-export default Header;

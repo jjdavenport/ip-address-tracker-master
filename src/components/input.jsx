@@ -1,6 +1,6 @@
 import arrow from "./assets/icon-arrow.svg";
 
-const Input = ({ value, onChange, onSubmit, onBlur, error }) => {
+export const Input = ({ value, onChange, onSubmit, onBlur, error }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(value);
@@ -17,15 +17,13 @@ const Input = ({ value, onChange, onSubmit, onBlur, error }) => {
           onChange={onChange}
           onBlur={onBlur}
           type="text"
-          className={`${error ? "outline outline-red-600 focus:outline" : "outline-none focus:outline-none"} ~sm/md:~py-3/4 ~sm/md:~pl-4/6 ~sm/md:placeholder:~text-sm/customSize flex w-full cursor-pointer rounded-l-2xl`}
-          placeholder="Search for any IP address or domain"
+          className={`${error ? "outline outline-red-600 focus:outline" : "outline-none focus:outline-none"} ~sm/md:~py-3/4 ~sm/md:~pl-4/6 ~sm/md:placeholder:~text-sm/customSize flex w-full cursor-pointer rounded-l-2xl p-1`}
+          placeholder="Search for any IP address"
         />
-        <button className="~sm/md:~px-5/6 rounded-r-2xl bg-black transition-colors duration-300 ease-in-out hover:bg-opacity-0">
+        <button className="~sm/md:~px-5/6 rounded-r-2xl bg-black p-4 transition-colors duration-300 ease-in-out hover:bg-opacity-0">
           <img src={arrow} />
         </button>
       </form>
     </>
   );
 };
-
-export default Input;

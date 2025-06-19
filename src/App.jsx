@@ -1,6 +1,4 @@
-import Header from "./components/header.jsx";
-import Card from "./components/card.jsx";
-import Map from "./components/map.jsx";
+import { Header, Card, Map } from "./components/index.jsx";
 import useData from "./hooks/data-context.jsx";
 
 function App() {

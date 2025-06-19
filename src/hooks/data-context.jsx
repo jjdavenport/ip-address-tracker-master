@@ -48,9 +48,9 @@ const useData = () => {
         isp: result.org,
         timeZone: result.timezone,
       }));
-      console.log(result);
+      setError(false);
     } catch {
-      console.log("error");
+      setError(true);
     }
   };
 
@@ -58,9 +58,6 @@ const useData = () => {
     fetchIp();
   }, []);
 
-  useEffect(() => {
-    console.log(error);
-  }, [error]);
   return {
     data,
     setData,
