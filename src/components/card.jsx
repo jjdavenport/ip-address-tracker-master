@@ -1,15 +1,15 @@
 export const Card = ({ ip, isp, city, country, timeZone }) => {
   return (
     <>
-      <div className="absolute z-10 -mt-14 flex w-full flex-col overflow-hidden bg-transparent md:w-11/12 md:max-w-screen-lg">
-        <ul className="flex flex-col rounded-xl bg-white p-5 text-center md:grid md:grid-cols-4 md:flex-row md:divide-x md:text-left">
+      <div className="absolute z-10 -mt-16 flex w-11/12 flex-col overflow-hidden bg-transparent md:-mt-14 md:max-w-screen-lg">
+        <ul className="flex flex-col gap-4 divide-darkGray rounded-xl bg-white p-5 text-center md:grid md:grid-cols-4 md:flex-row md:divide-x md:text-left">
           <li className="flex flex-col overflow-hidden md:items-start">
             <span className="text-xs font-bold uppercase tracking-widest text-darkGray">
               IP Address
             </span>
             <span className="font-medium text-veryDarkGray">{ip}</span>
           </li>
-          <li className="flex flex-col md:items-start">
+          <li className="flex flex-col md:items-start md:pl-4">
             <span className="text-xs font-bold uppercase tracking-widest text-darkGray">
               Location
             </span>
@@ -17,7 +17,7 @@ export const Card = ({ ip, isp, city, country, timeZone }) => {
               {city}, {country}
             </span>
           </li>
-          <li className="flex flex-col md:items-start">
+          <li className="flex flex-col md:items-start md:pl-4">
             <span className="text-xs font-bold uppercase tracking-widest text-darkGray">
               Timezone
             </span>
@@ -25,7 +25,7 @@ export const Card = ({ ip, isp, city, country, timeZone }) => {
               {timeZone}
             </span>
           </li>
-          <li className="flex flex-col md:items-start">
+          <li className="flex flex-col md:items-start md:pl-4">
             <span className="text-xs font-bold uppercase tracking-widest text-darkGray">
               ISP
             </span>
