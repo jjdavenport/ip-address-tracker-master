@@ -3,7 +3,7 @@ import { Input } from "./index";
 export const Header = ({ input, setInput, onSubmit, onBlur, error }) => {
   return (
     <>
-      <header className="flex h-[30vh] w-full flex-col items-center justify-center gap-4 bg-mobile bg-cover bg-no-repeat pb-16 md:bg-desktop">
+      <header className="flex h-[30vh] min-h-48 w-full flex-col items-center justify-center gap-4 bg-mobile bg-cover bg-no-repeat pb-16 md:min-h-52 md:bg-desktop">
         <h1 className="text-2xl font-medium text-white md:text-3xl">
           IP Address Tracker
         </h1>

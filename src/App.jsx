@@ -16,17 +16,17 @@ function App() {
             }
             error={error}
           />
-          <main className="flex flex-col items-center">
-            <Card
-              ip={data.ip}
-              city={data.city}
-              country={data.country}
-              timeZone={data.timeZone}
-              isp={data.isp}
-            />
-            <Map lat={data.lat} lng={data.lng} />
-          </main>
+          <Card
+            ip={data.ip}
+            city={data.city}
+            country={data.country}
+            timeZone={data.timeZone}
+            isp={data.isp}
+          />
         </div>
+        <main className="z-0 flex flex-col items-center">
+          <Map lat={data.lat} lng={data.lng} />
+        </main>
       </div>
     </>
   );

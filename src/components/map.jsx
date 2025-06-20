@@ -20,30 +20,32 @@ const ChangeView = ({ center, zoom }) => {
 };
 
 export const Map = ({ lat, lng }) => {
-  const loading = lat !== 0 && lng !== 0;
+  const isLoaded = lat && lng && lat !== 0 && lng !== 0;
   const center = [lat, lng];
   const zoom = 13;
 
+  if (!isLoaded) return null;
+
   return (
-    <div className="flex h-96 w-screen flex-1">
-      {loading && (
-        <MapContainer
-          center={center}
-          zoom={zoom}
-          style={{ height: "70vh", width: "100%", zIndex: 0 }}
-          zoomControl={false}
-        >
-          <ChangeView center={center} zoom={zoom} />
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            zIndex={0}
-          />
-          <Marker position={center} icon={customMarkerIcon}>
-            <Popup />
-          </Marker>
-        </MapContainer>
-      )}
-    </div>
+    <MapContainer
+      center={center}
+      zoom={zoom}
+      style={{ height: "70vh", width: "100%", zIndex: 0 }}
+      zoomControl={false}
+    >
+      <ChangeView center={center} zoom={zoom} />
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution={
+          `Challenge by ` +
+          `<a style="text-decoration:underline;" target="_blank" href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a> ` +
+          `Coded by <a style="text-decoration:underline;" href="https://github.com/jjdavenport">jjdavenport</a>`
+        }
+        zIndex={0}
+      />
+      <Marker position={center} icon={customMarkerIcon}>
+        <Popup />
+      </Marker>
+    </MapContainer>
   );
 };
