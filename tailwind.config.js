@@ -16,9 +16,6 @@ export default {
         veryDarkGray: "hsl(0, 0%, 17%)",
         darkGray: "hsl(0, 0%, 59%)",
       },
-      fontSize: {
-        customSize: "1.125rem",
-      },
     },
   },
   plugins: [],

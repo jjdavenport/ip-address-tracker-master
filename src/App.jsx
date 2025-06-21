@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <div className="flex h-full min-h-screen w-screen flex-col overflow-hidden">
-        <div className="relative flex flex-col items-center font-custom text-customSize text-lg">
+        <div className="relative flex flex-col items-center font-custom text-lg">
           <Header
             onSubmit={handleSubmit}
             onBlur={handleBlur}

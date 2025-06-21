@@ -7,7 +7,10 @@ export const Card = ({ ip, isp, city, country, timeZone }) => {
             <span className="text-xs font-bold uppercase tracking-widest text-darkGray">
               IP Address
             </span>
-            <span className="font-medium text-veryDarkGray lg:text-xl">
+            <span
+              data-testid="span"
+              className="font-medium text-veryDarkGray lg:text-xl"
+            >
               {ip}
             </span>
           </li>
@@ -15,7 +18,10 @@ export const Card = ({ ip, isp, city, country, timeZone }) => {
             <span className="text-xs font-bold uppercase tracking-widest text-darkGray">
               Location
             </span>
-            <span className="font-medium text-veryDarkGray lg:text-xl">
+            <span
+              data-testid="span"
+              className="font-medium text-veryDarkGray lg:text-xl"
+            >
               {city}, {country}
             </span>
           </li>
@@ -23,7 +29,10 @@ export const Card = ({ ip, isp, city, country, timeZone }) => {
             <span className="text-xs font-bold uppercase tracking-widest text-darkGray">
               Timezone
             </span>
-            <span className="font-medium text-veryDarkGray lg:text-xl">
+            <span
+              data-testid="span"
+              className="font-medium text-veryDarkGray lg:text-xl"
+            >
               {timeZone}
             </span>
           </li>
@@ -31,7 +40,10 @@ export const Card = ({ ip, isp, city, country, timeZone }) => {
             <span className="text-xs font-bold uppercase tracking-widest text-darkGray">
               ISP
             </span>
-            <span className="font-medium text-veryDarkGray lg:text-xl">
+            <span
+              data-testid="span"
+              className="font-medium text-veryDarkGray lg:text-xl"
+            >
               {isp}
             </span>
           </li>
